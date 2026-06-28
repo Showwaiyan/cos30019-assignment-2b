@@ -94,20 +94,21 @@ def run_routing_and_prediction(
         path1, cost1 = paths_data[0]
         print(f"Best path: {format_path_with_costs(graph, path1)}")
         print(f"Total Driving Time: {cost1 / 60.0:.1f} min")
-        
+
         # 2nd path
         if len(paths_data) > 1:
             path2, cost2 = paths_data[1]
             print(f"2nd path: {format_path_with_costs(graph, path2)}")
             print(f"Total Driving Time: {cost2 / 60.0:.1f} min")
-            
+
         # 3rd path
         if len(paths_data) > 2:
             path3, cost3 = paths_data[2]
             print(f"3rd path: {format_path_with_costs(graph, path3)}")
             print(f"Total Driving Time: {cost3 / 60.0:.1f} min")
     else:
-        print(f"\nRouting failed: No path exists between {origin_node} and {dest_node}.\n")
+        print(f"\nRouting failed: No path exists between {
+              origin_node} and {dest_node}.\n")
 
     # 7. Write map.txt (which will also be overwritten during interactions in the visualizer)
     try:
@@ -168,7 +169,8 @@ def main():
         print("Error: Invalid time. Hour must be 00-23 and Minute must be 00-59.")
         sys.exit(1)
 
-    success = run_routing_and_prediction(origin_node, dest_node, time_str, model_name)
+    success = run_routing_and_prediction(
+        origin_node, dest_node, time_str, model_name)
     if not success:
         sys.exit(1)
 
